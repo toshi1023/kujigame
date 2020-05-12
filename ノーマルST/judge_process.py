@@ -56,11 +56,11 @@ def judgement(rates):
     print("ジャッジメント!!!\n")
     sleep(3)
     print("3\n")
-    sleep(3)
+    sleep(1.5)
     print("2\n")
-    sleep(3)
+    sleep(1.5)
     print("1\n")
-    sleep(3)
+    sleep(1.5)
     print("気合を入れてEnterキーを押せ！！！！\n")
 
     # Enterキーの入力メソッドをインスタンス化
