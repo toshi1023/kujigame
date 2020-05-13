@@ -69,8 +69,14 @@ def judgement(rates):
     if get_key == "":
         sleep(1)
         if r <= rate:
-            congulatulations = "Congulatulations!!!\n"
-            print(congulatulations)
+            congulatulations = "Congulatulations!!!"
+            print("　　　　　　　　　　　　　　　《《》》》")
+            print("　　　　　　　　　　　　　　　(。)(。) 》》〉")
+            print("　　　　　　　　　　　　　　ノ　　　 ）《《")
+            print("　 　　　　　　　　　　　　<＿＿　　 l《《")
+            print(congulatulations + "  ＞　　 ＿__）　　l》〉")
+            print("　　　　　　　　　　　　　<＿_ノ　 /《 \n")
+
             sleep(3)
             print("スペシャルタイム突入！！！\n")
             sleep(3)

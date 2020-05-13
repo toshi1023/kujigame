@@ -2,30 +2,54 @@ import kuji_method
 import sys
 
 # キーボード入力によって確率をセット
-nomal_print = input('通常時の確率を数字で入力してください>> ')
-high_print = input('高確率時の確率を数字で入力してください>> ')
-rate = input('超大当たり比率の割合(%)を数字で入力してください>> ')
-money1_print = input('超大当たりの出玉を数字で入力してください>> ')
-money2_print = input('大当たりの出玉を数字で入力してください>> ')
-st_print = input('STの回転数を数字で入力してください>> ')
-judge_print = input('ST突入率の割合を数字で入力してください>> ')
+# 数字で入力しなかった場合は例外処理へ
+try:
+    nomal_print = int(input('通常時の確率を数字で入力してください>> '))
+    high_print = int(input('高確率時の確率を数字で入力してください>> '))
+    rate = int(input('超大当たり比率の割合(%)を100以下の数字で入力してください>> '))
+    if rate <= 100:
+        money1_print = int(input('超大当たりの出玉を数字で入力してください>> '))
+        money2_print = int(input('大当たりの出玉を数字で入力してください>> '))
+        st_print = int(input('STの回転数を数字で入力してください>> '))
+        judge_print = int(input('ST突入率の割合を100以下の数字で入力してください>> '))
+        if judge_print <= 100:
+            print("問題がなければ、Enterキーを押してください（入力しなおす場合は\"no\"を入力してください）")
+            # シミュレーション開始処理に使用するオブジェクト
+            start = input()
+        else:
+            print("＜＜＜ 100以下の値で入力してください ＞＞＞")
+            start = "no"
+    else:
+        print("＜＜＜ 100以下の値で入力してください ＞＞＞")
+        start = "no"
 
-print("問題がなければ、Enterキーを押してください（入力しなおす場合は\"no\"を入力してください）")
+# エラーが発生した際は再入力へ自動移行
+except Exception as e:
+    print("＜＜＜ 数字で入力してください ＞＞＞")
+    start = "no"
 
-# シミュレーション開始処理に使用するオブジェクト
-start = input()
 
 # "no"を入力すれば確率の入力がやり直し出来るように設定
 while True:
     if start != "":
         print("\n\n")
-        nomal_print = input('通常時の確率を数字で入力してください>> ')
-        high_print = input('高確率時の確率を数字で入力してください>> ')
-        rate = input('超大当たり比率の割合(%)を数字で入力してください>> ')
-        money1_print = input('超大当たりの出玉を数字で入力してください>> ')
-        money2_print = input('大当たりの出玉を数字で入力してください>> ')
-        st_print = input('STの回転数を数字で入力してください>> ')
-        judge_print = input('ST突入率の割合を数字で入力してください>> ')
+        try:
+            nomal_print = int(input('通常時の確率を数字で入力してください>> '))
+            high_print = int(input('高確率時の確率を数字で入力してください>> '))
+            rate = int(input('超大当たり比率の割合(%)を100以下の数字で入力してください>> '))
+            if rate > 100:
+                print("＜＜＜ 100以下の値で入力してください ＞＞＞")
+                continue
+            money1_print = int(input('超大当たりの出玉を数字で入力してください>> '))
+            money2_print = int(input('大当たりの出玉を数字で入力してください>> '))
+            st_print = int(input('STの回転数を数字で入力してください>> '))
+            judge_print = int(input('ST突入率の割合を100以下の数字で入力してください>> '))
+            if judge_print > 100:
+                print("＜＜＜ 100以下の値で入力してください ＞＞＞")
+                continue
+        except Exception as e:
+            print("＜＜＜ 数字で入力してください ＞＞＞")
+            continue
 
         print("問題がなければ、Enterキーを押してください（入力しなおす場合は\"no\"を入力してください）")
         start = input()

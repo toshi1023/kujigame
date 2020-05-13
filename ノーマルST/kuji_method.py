@@ -77,16 +77,23 @@ def pac_2(judge1, number, time, nomal2, rate):
         # congulatulationsの値を書き換えする
         # →２回目のループ時に時短を再度走らせないようにするため
         if lucky2 <= 100:
-            success = "＜＜＜＜　引き戻しに成功！　＞＞＞＞\n"
+            success = "引き戻しに成功！"
+            lucky_times += 1
+            print("　　　　　　　　　　　　　　　《《》》》")
+            print("　　　　　　　　　　　　　　　(。)(。) 》》〉")
+            print("　　　　　　　　　　　　　　ノ　　　 ）《《")
+            print("　 　　　　　　　　　　　　<＿＿　　 l《《")
+            print(success + "  ＞　　   ＿__）　　l》〉")
+            print("　　　　　　　　　　　　　<＿_ノ　 /《 \n")
             r = random.randint(1, 100)
             if r <= rates:
                 st_lucky_times += 1
+                sleep(2)
+                print( str(lucky2) + "回目で" + str(st_lucky_times) + "連目の超大当たりをゲット\n" )
             else:
                 st2_lucky_times += 1
-            lucky_times += 1
-            print(success)
-            sleep(2)
-            print( str(lucky2) + "回目で" + str(lucky_times) + "連目の大当たりをゲット\n" )
+                sleep(2)
+                print( str(lucky2) + "回目で" + str(st2_lucky_times) + "連目の大当たりをゲット\n" )
             sleep(2)
             print("スペシャルタイム突入！！！\n")
             sleep(2)

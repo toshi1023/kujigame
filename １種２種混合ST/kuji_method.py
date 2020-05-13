@@ -77,7 +77,12 @@ def pac_2(judge1, number, number2, time, nomal2):
             success = "＜＜＜＜　引き戻しに成功！　＞＞＞＞\n"
             total_lucky_times += 1
             st_lucky_times += 1
-            print(success)
+            print("　　　　　　　　　　　　　　　《《》》》")
+            print("　　　　　　　　　　　　　　　(。)(。) 》》〉")
+            print("　　　　　　　　　　　　　　ノ　　　 ）《《")
+            print("　 　　　　　　　　　　　　<＿＿　　 l《《")
+            print(success + "  ＞　　   ＿__）　　l》〉")
+            print("　　　　　　　　　　　　　<＿_ノ　 /《 \n")
             sleep(2)
             print( str(lucky2) + "回目で" + str(total_lucky_times) + "連目の大当たりをゲット\n" )
             sleep(2)
